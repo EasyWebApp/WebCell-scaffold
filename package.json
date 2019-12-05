@@ -1,0 +1,25 @@
+{
+  "name": "webcell-scaffold",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "2.4.0",
+    "web-cell": "2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "keywords": [
+    "web-component",
+    "typescript",
+    "jsx"
+  ],
+  "browerslist": [
+    "Chrome > 50"
+  ]
+}
