@@ -9,59 +9,70 @@ import { CellClock } from './Clock';
 
 @observer
 @component({
-  tagName: 'page-router',
-  renderTarget: 'children'
+    tagName: 'page-router',
+    renderTarget: 'children'
 })
 export class PageRouter extends HTMLRouter {
-  protected history = history;
+    protected history = history;
 
-  menu = [
-    {
-      title: 'Hello',
-      href: 'hello'
-    },
-    {
-      title: 'Clock',
-      href: 'clock'
+    menu = [
+        {
+            title: 'Hello',
+            href: 'hello'
+        },
+        {
+            title: 'Clock',
+            href: 'clock'
+        },
+        {
+            title: 'GitHub source',
+            href: 'https://github.com/EasyWebApp/scaffold'
+        }
+    ];
+
+    render() {
+        return (
+            <Fragment>
+                <NavBar title="WebCell scaffold" menu={this.menu} narrow />
+
+                <main
+                    className="container my-5 pt-3"
+                    style={{ minHeight: '60vh' }}
+                >
+                    {matchRoutes(
+                        [
+                            {
+                                paths: ['clock'],
+                                component: CellClock
+                            },
+                            {
+                                paths: ['hello', ''],
+                                component: Hello
+                            }
+                        ],
+                        history.path
+                    )}
+                </main>
+
+                <footer className="text-center bg-light py-5">
+                    Proudly developed with
+                    <a
+                        className="mx-1"
+                        target="_blank"
+                        href="https://web-cell.dev/"
+                    >
+                        WebCell v2
+                    </a>
+                    &amp;
+                    <a
+                        className="mx-1"
+                        target="_blank"
+                        href="https://web-cell.dev/BootCell/"
+                    >
+                        BootCell v1
+                    </a>
+                </footer>
+            </Fragment>
+        );
     }
-  ];
-
-  render() {
-    return (
-      <Fragment>
-        <NavBar title="WebCell scaffold" menu={this.menu} narrow />
-
-        <main className="container my-5 pt-3" style={{ minHeight: '60vh' }}>
-          {matchRoutes(
-            [
-              {
-                paths: ['clock'],
-                component: CellClock
-              },
-              {
-                paths: ['hello', ''],
-                component: Hello
-              }
-            ],
-            history.path
-          )}
-        </main>
-
-        <footer className="text-center bg-light py-5">
-          Proudly developed with
-          <a className="mx-1" target="_blank" href="https://web-cell.dev/">
-            WebCell v2
-          </a>
-          &amp;
-          <a
-            className="mx-1"
-            target="_blank"
-            href="https://web-cell.dev/BootCell/"
-          >
-            BootCell v1
-          </a>
-        </footer>
-      </Fragment>
-    );
-  }
 }

@@ -1,25 +1,25 @@
 import { component, mixin, watch, createCell } from 'web-cell';
 
 @component({
-  tagName: 'cell-clock'
+    tagName: 'cell-clock'
 })
 export class CellClock extends mixin() {
-  @watch
-  time = new Date();
+    @watch
+    time = new Date();
 
-  private timer: number;
+    private timer: number;
 
-  connectedCallback() {
-    this.timer = setInterval(() => (this.time = new Date()), 1000);
-  }
+    connectedCallback() {
+        this.timer = self.setInterval(() => (this.time = new Date()), 1000);
+    }
 
-  disconnectedCallback() {
-    clearInterval(this.timer);
-  }
+    disconnectedCallback() {
+        clearInterval(this.timer);
+    }
 
-  render() {
-    const { time } = this;
+    render() {
+        const { time } = this;
 
-    return <div>{time.toLocaleString()}</div>;
-  }
+        return <div>{time.toLocaleString()}</div>;
+    }
 }

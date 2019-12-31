@@ -1,7 +1,7 @@
-import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
-import '@webcomponents/webcomponentsjs/webcomponents-bundle';
 import { documentReady, render, createCell } from 'web-cell';
 
 import { PageRouter } from './page/PageRouter';
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.ts');
 
 documentReady.then(() => render(<PageRouter />));
