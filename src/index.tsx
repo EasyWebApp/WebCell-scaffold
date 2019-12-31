@@ -1,13 +1,7 @@
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 import '@webcomponents/webcomponentsjs/webcomponents-bundle';
-import { createCell, render } from 'web-cell';
+import { documentReady, render, createCell } from 'web-cell';
 
-import { Hello } from './Hello';
-import { CellClock } from './Clock';
+import { PageRouter } from './page/PageRouter';
 
-render(
-  <main>
-    <Hello name="WebCell" />
-    <CellClock />
-  </main>
-);
+documentReady.then(() => render(<PageRouter />));

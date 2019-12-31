@@ -1,4 +1,4 @@
-import { createCell, component, mixin, watch } from 'web-cell';
+import { component, mixin, watch, createCell } from 'web-cell';
 
 @component({
   tagName: 'cell-clock'
