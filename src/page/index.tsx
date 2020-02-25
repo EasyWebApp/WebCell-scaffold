@@ -1,9 +1,11 @@
 import { component, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
-import { HTMLRouter, matchRoutes } from 'cell-router/source';
+import { HTMLRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 
 import { history } from '../model';
+import WebCell_0 from '../image/WebCell-0.png';
+
 import { Hello } from './Hello';
 import { CellClock } from './Clock';
 
@@ -14,6 +16,16 @@ import { CellClock } from './Clock';
 })
 export class PageRouter extends HTMLRouter {
     protected history = history;
+    protected routes = [
+        {
+            paths: ['clock'],
+            component: CellClock
+        },
+        {
+            paths: ['hello', ''],
+            component: Hello
+        }
+    ];
 
     menu = [
         {
@@ -33,25 +45,23 @@ export class PageRouter extends HTMLRouter {
     render() {
         return (
             <Fragment>
-                <NavBar title="WebCell scaffold" menu={this.menu} narrow />
+                <NavBar
+                    narrow
+                    brand={
+                        <img
+                            alt="WebCell scaffold"
+                            src={WebCell_0}
+                            style={{ width: '2rem' }}
+                        />
+                    }
+                    menu={this.menu}
+                />
 
                 <main
                     className="container my-5 pt-3"
                     style={{ minHeight: '60vh' }}
                 >
-                    {matchRoutes(
-                        [
-                            {
-                                paths: ['clock'],
-                                component: CellClock
-                            },
-                            {
-                                paths: ['hello', ''],
-                                component: Hello
-                            }
-                        ],
-                        history.path
-                    )}
+                    {super.render()}
                 </main>
 
                 <footer className="text-center bg-light py-5">
