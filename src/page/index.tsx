@@ -57,10 +57,7 @@ export class PageRouter extends HTMLRouter {
                     menu={this.menu}
                 />
 
-                <main
-                    className="container my-5 pt-3"
-                    style={{ minHeight: '60vh' }}
-                >
+                <main className="container" style={{ minHeight: '60vh' }}>
                     {super.render()}
                 </main>
 
