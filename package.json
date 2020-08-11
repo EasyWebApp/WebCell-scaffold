@@ -17,19 +17,19 @@
     },
     "main": "src/index.html",
     "dependencies": {
-        "boot-cell": "^1.0.0-rc.34",
+        "boot-cell": "^1.0.0-rc.36",
         "browser-unhandled-rejection": "^1.0.2",
         "cell-router": "^2.0.0-rc.8",
         "classnames": "^2.2.6",
-        "mobx": "^5.15.4",
+        "mobx": "^5.15.5",
         "mobx-web-cell": "^0.3.1",
-        "web-cell": "2.1.1",
-        "web-utility": "^1.5.2"
+        "web-cell": "^2.1.3",
+        "web-utility": "^1.7.0"
     },
     "devDependencies": {
-        "@typescript-eslint/parser": "^3.6.0",
-        "autoprefixer": "^9.8.4",
-        "eslint": "^7.4.0",
+        "@typescript-eslint/parser": "^3.9.0",
+        "autoprefixer": "^9.8.6",
+        "eslint": "^7.6.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-prettier": "^3.1.4",
         "husky": "^4.2.5",
@@ -37,7 +37,7 @@
         "parcel-bundler": "^1.12.4",
         "postcss-modules": "^3.2.0",
         "prettier": "^2.0.5",
-        "typescript": "^3.9.6",
+        "typescript": "^3.9.7",
         "workbox-cli": "^4.3.1"
     },
     "prettier": {
