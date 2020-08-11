@@ -19,7 +19,7 @@ self.addEventListener('unhandledrejection', event => {
 const { serviceWorker } = window.navigator;
 
 serviceWorker
-    ?.register('/sw.js')
+    ?.register('sw.js')
     .then(serviceWorkerUpdate)
     .then(worker => {
         if (window.confirm('New version of this Web App detected, update now?'))
