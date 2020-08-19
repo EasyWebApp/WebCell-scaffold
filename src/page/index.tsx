@@ -2,6 +2,7 @@ import { component, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { HTMLRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
+import { NavLink } from 'boot-cell/source/Navigator/Nav';
 
 import { history } from '../model';
 import WebCell_0 from '../image/WebCell-0.png';
@@ -54,8 +55,11 @@ export class PageRouter extends HTMLRouter {
                             style={{ width: '2rem' }}
                         />
                     }
-                    menu={this.menu}
-                />
+                >
+                    {this.menu.map(({ title, ...props }) => (
+                        <NavLink {...props}>{title}</NavLink>
+                    ))}
+                </NavBar>
 
                 <main className="container" style={{ minHeight: '60vh' }}>
                     {super.render()}
