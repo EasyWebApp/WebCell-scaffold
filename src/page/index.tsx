@@ -45,7 +45,7 @@ export class PageRouter extends HTMLRouter {
 
     render() {
         return (
-            <Fragment>
+            <>
                 <NavBar
                     narrow
                     brand={
@@ -83,7 +83,7 @@ export class PageRouter extends HTMLRouter {
                         BootCell v1
                     </a>
                 </footer>
-            </Fragment>
+            </>
         );
     }
 }
