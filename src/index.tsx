@@ -2,7 +2,7 @@ import { auto } from 'browser-unhandled-rejection';
 import { serviceWorkerUpdate } from 'web-utility';
 import { documentReady, render, createCell } from 'web-cell';
 
-import { PageRouter } from './page';
+import { PageFrame } from './page';
 
 auto();
 
@@ -30,4 +30,4 @@ serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
 );
 
-documentReady.then(() => render(<PageRouter />));
+documentReady.then(() => render(<PageFrame />));
