@@ -7,7 +7,7 @@ App Project scaffold of **WebCell** v2
 https://web-cell.dev/scaffold/
 
 [![NPM Dependency](https://david-dm.org/EasyWebApp/scaffold.svg)][1]
-[![CI & CD](https://github.com/EasyWebApp/scaffold/workflows/API%20Document/badge.svg?branch=master)][2]
+[![CI & CD](https://github.com/EasyWebApp/scaffold/workflows/CI%20&%20CD/badge.svg)][2]
 
 ## Technology stack
 
