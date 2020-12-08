@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "es6",
-        "moduleResolution": "node",
+        "target": "ES5",
+        "module": "ES6",
+        "moduleResolution": "Node",
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "allowJs": true,
@@ -10,7 +10,7 @@
         "jsx": "react",
         "jsxFactory": "createCell",
         "jsxFragmentFactory": "Fragment",
-        "lib": ["ES6", "DOM"],
+        "lib": ["ES2020", "DOM"],
         "rootDir": "src"
     },
     "include": ["src/**/*"]

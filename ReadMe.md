@@ -14,7 +14,7 @@ https://web-cell.dev/scaffold/
 -   Language: [TypeScript v4][3]
 -   Component engine: [WebCell v2][4]
 -   Component suite: [BootStrap v4][5]
--   PWA framework: [Workbox v4][6]
+-   PWA framework: [Workbox v6][6]
 -   Package bundler: [Parcel v1][7]
 -   CI / CD: GitHub [Actions][8] + [Pages][9]
 

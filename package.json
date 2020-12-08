@@ -17,27 +17,28 @@
     },
     "main": "src/index.html",
     "dependencies": {
-        "boot-cell": "^1.1.1",
-        "bootstrap-icons": "^1.0.0",
+        "boot-cell": "^1.5.1",
+        "bootstrap-icons": "^1.1.0",
         "browser-unhandled-rejection": "^1.0.2",
         "cell-router": "^2.0.1",
         "classnames": "^2.2.6",
         "web-cell": "^2.2.0",
-        "web-utility": "^1.8.0"
+        "web-utility": "^2.0.0"
     },
     "devDependencies": {
-        "@typescript-eslint/parser": "^4.2.0",
+        "@types/node": "^14.14.11",
+        "@typescript-eslint/parser": "^4.9.1",
         "autoprefixer": "^9.8.6",
-        "eslint": "^7.9.0",
-        "eslint-config-prettier": "^6.12.0",
-        "eslint-plugin-prettier": "^3.1.4",
-        "husky": "^4.3.0",
-        "lint-staged": "^10.4.0",
+        "eslint": "^7.15.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-prettier": "^3.2.0",
+        "husky": "^4.3.5",
+        "lint-staged": "^10.5.3",
         "parcel-bundler": "^1.12.4",
         "postcss-modules": "^3.2.2",
-        "prettier": "^2.1.2",
-        "typescript": "^4.0.3",
-        "workbox-cli": "^4.3.1"
+        "prettier": "^2.2.1",
+        "typescript": "^4.1.2",
+        "workbox-cli": "^6.0.2"
     },
     "prettier": {
         "singleQuote": true,
@@ -46,9 +47,7 @@
         "tabWidth": 4
     },
     "lint-staged": {
-        "*.{html,md,css,less,json,yml}": [
-            "prettier --write"
-        ],
+        "*.{html,md,css,less,json,yml}": "prettier --write",
         "*.{js,ts,tsx}": [
             "prettier --write",
             "eslint --fix"
@@ -64,10 +63,9 @@
     },
     "scripts": {
         "test": "lint-staged",
-        "start": "workbox generateSW  &&  parcel src/index.html --open",
-        "pack-dist": "parcel build src/index.html --public-url .",
-        "pack-sw": "rm -f dist/sw.js.map  &&  workbox generateSW",
-        "build": "rm -rf dist/  &&  npm run pack-dist  &&  npm run pack-sw"
+        "start": "parcel src/index.html --open",
+        "pack": "parcel build src/index.html --public-url .",
+        "build": "rm -rf dist/  &&  npm run pack  &&  workbox generateSW"
     },
     "husky": {
         "hooks": {

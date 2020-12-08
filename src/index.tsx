@@ -6,25 +6,26 @@ import { PageFrame } from './page';
 
 auto();
 
-self.addEventListener('unhandledrejection', event => {
-    const { message } = event.reason;
+self.addEventListener('unhandledrejection', ({ reason }) => {
+    const { message } = reason as Error;
 
-    if (!message) return;
-
-    event.preventDefault();
-
-    self.alert(message);
+    if (message) self.alert(message);
 });
 
 const { serviceWorker } = window.navigator;
 
-serviceWorker
-    ?.register('sw.js')
-    .then(serviceWorkerUpdate)
-    .then(worker => {
-        if (window.confirm('New version of this Web App detected, update now?'))
-            worker.postMessage({ type: 'SKIP_WAITING' });
-    });
+if (process.env.NODE_ENV !== 'development')
+    serviceWorker
+        ?.register('sw.js')
+        .then(serviceWorkerUpdate)
+        .then(worker => {
+            if (
+                window.confirm(
+                    'New version of this Web App detected, update now?'
+                )
+            )
+                worker.postMessage({ type: 'SKIP_WAITING' });
+        });
 
 serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
