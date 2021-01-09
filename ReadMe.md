@@ -13,7 +13,7 @@ https://web-cell.dev/scaffold/
 
 -   Language: [TypeScript v4][3]
 -   Component engine: [WebCell v2][4]
--   Component suite: [BootStrap v4][5]
+-   Component suite: [BootCell v1][5]
 -   PWA framework: [Workbox v6][6]
 -   Package bundler: [Parcel v1][7]
 -   CI / CD: GitHub [Actions][8] + [Pages][9]
@@ -36,7 +36,7 @@ npm run build
 [2]: https://github.com/EasyWebApp/scaffold/actions
 [3]: https://typescriptlang.org
 [4]: https://web-cell.dev/
-[5]: https://getbootstrap.com
+[5]: https://bootstrap.web-cell.dev/
 [6]: https://developers.google.com/web/tools/workbox
 [7]: https://parceljs.org
 [8]: https://github.com/features/actions
