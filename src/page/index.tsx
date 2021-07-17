@@ -29,6 +29,9 @@ export function PageFrame() {
         <>
             <NavBar
                 narrow
+                expand="md"
+                theme="dark"
+                background="dark"
                 brand={
                     <img
                         alt="WebCell scaffold"
@@ -58,6 +61,12 @@ export function PageFrame() {
                 ]}
             />
             <footer className="text-center bg-light py-5">
+                <img
+                    className="mx-1"
+                    style={{ width: '1.5rem' }}
+                    alt="WebCell scaffold"
+                    src={WebCell_0}
+                />
                 Proudly developed with
                 <a
                     className="mx-1"
