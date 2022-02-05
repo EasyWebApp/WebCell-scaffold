@@ -45,3 +45,7 @@ declare module '*.webp' {
 
     export default path;
 }
+
+declare module 'browser-unhandled-rejection' {
+    export function auto(): any;
+}

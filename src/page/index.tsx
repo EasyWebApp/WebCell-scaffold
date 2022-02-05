@@ -1,7 +1,6 @@
 import { createCell, Fragment } from 'web-cell';
-import { CellRouter } from 'cell-router/source';
-import { NavBar } from 'boot-cell/source/Navigator/NavBar';
-import { NavLink } from 'boot-cell/source/Navigator/Nav';
+import { CellRouter } from 'cell-router';
+import { NavBar, NavLink } from 'boot-cell';
 
 import { history } from '../model';
 import WebCell_0 from '../image/WebCell-0.png';
