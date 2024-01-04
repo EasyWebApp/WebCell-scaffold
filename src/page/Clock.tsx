@@ -1,11 +1,11 @@
-import { component, mixin, watch, createCell } from 'web-cell';
+import { observable } from 'mobx';
+import { component, observer } from 'web-cell';
 
-@component({
-    tagName: 'cell-clock'
-})
-export class CellClock extends mixin() {
-    @watch
-    time = new Date();
+@component({ tagName: 'cell-clock' })
+@observer
+export class CellClock extends HTMLElement {
+    @observable
+    accessor time = new Date();
 
     private timer: number;
 
@@ -20,6 +20,6 @@ export class CellClock extends mixin() {
     render() {
         const { time } = this;
 
-        return <div>{time.toLocaleString()}</div>;
+        return <time dateTime={time.toJSON()}>{time.toLocaleString()}</time>;
     }
 }
