@@ -3,7 +3,8 @@ import { DOMRenderer } from 'dom-renderer';
 import { configure } from 'mobx';
 import { documentReady, serviceWorkerUpdate } from 'web-utility';
 
-import { HomePage } from './page/Home';
+import './index.less';
+import { PageFrame } from './page';
 
 auto();
 
@@ -34,4 +35,4 @@ serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
 );
 
-documentReady.then(() => new DOMRenderer().render(<HomePage />));
+documentReady.then(() => new DOMRenderer().render(<PageFrame />));
