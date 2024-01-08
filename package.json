@@ -1,7 +1,7 @@
 {
     "name": "webcell-scaffold",
-    "version": "0.3.0",
-    "description": "App Project scaffold of WebCell v2",
+    "version": "0.4.0",
+    "description": "App Project scaffold of WebCell v3",
     "keywords": [
         "web-component",
         "typescript",
@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "browser-unhandled-rejection": "^1.0.2",
-        "cell-router": "3.0.0-rc.1",
+        "cell-router": "^3.0.0-rc.1",
         "classnames": "^2.5.1",
         "dom-renderer": "^2.0.4",
         "mobx": "^6.12.0",
@@ -30,7 +30,7 @@
         "@parcel/transformer-less": "2.11.0",
         "@parcel/transformer-typescript-tsc": "~2.11.0",
         "@parcel/transformer-webmanifest": "~2.11.0",
-        "@types/node": "^18.19.4",
+        "@types/node": "^18.19.5",
         "@typescript-eslint/eslint-plugin": "^6.18.0",
         "@typescript-eslint/parser": "^6.18.0",
         "eslint": "^8.56.0",

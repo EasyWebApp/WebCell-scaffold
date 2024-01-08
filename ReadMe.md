@@ -2,7 +2,7 @@
 
 # WebCell scaffold
 
-App Project scaffold of **WebCell** v2
+App Project scaffold of **WebCell** v3
 
 https://web-cell.dev/scaffold/
 
@@ -20,15 +20,15 @@ https://web-cell.dev/scaffold/
 ## Development
 
 ```shell
-npm install
-
+npm i pnpm -g
+pnpm i
 npm start
 ```
 
 ## Deployment
 
 ```shell
-npm run build
+pnpm build
 ```
 
 [1]: https://david-dm.org/EasyWebApp/scaffold

@@ -9,7 +9,7 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   cell-router:
-    specifier: 3.0.0-rc.1
+    specifier: ^3.0.0-rc.1
     version: 3.0.0-rc.1(typescript@5.3.3)
   classnames:
     specifier: ^2.5.1
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ~2.11.0
     version: 2.11.0
   '@types/node':
-    specifier: ^18.19.4
-    version: 18.19.4
+    specifier: ^18.19.5
+    version: 18.19.5
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.18.0
     version: 6.18.0(@typescript-eslint/parser@6.18.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -2589,15 +2589,15 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.19.4
+      '@types/node': 18.19.5
     dev: true
 
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
     dev: true
 
-  /@types/node@18.19.4:
-    resolution: {integrity: sha512-xNzlUhzoHotIsnFoXmJB+yWmBvFZgKCI9TtPIEdYIMM1KWfwuY8zh7wvc1u1OAXlC7dlf6mZVx/s+Y5KfFz19A==}
+  /@types/node@18.19.5:
+    resolution: {integrity: sha512-22MG6T02Hos2JWfa1o5jsIByn+bc5iOt1IS4xyg6OG68Bu+wMonVZzdrgCw693++rpLE9RUT/Bx15BeDzO0j+g==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -2609,13 +2609,13 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.19.4
+      '@types/node': 18.19.5
     dev: true
 
   /@types/responselike@1.0.3:
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
     dependencies:
-      '@types/node': 18.19.4
+      '@types/node': 18.19.5
     dev: true
 
   /@types/semver@7.5.6:
@@ -4535,7 +4535,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.19.4
+      '@types/node': 18.19.5
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true

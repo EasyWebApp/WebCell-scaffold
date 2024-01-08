@@ -1,9 +1,19 @@
 import { PageProps, createRouter } from 'cell-router';
 
-import WebCell_0 from '../image/WebCell-0.png';
+import {
+    Container,
+    NavLink,
+    Navbar,
+    NavbarBrand,
+    NavbarToggle,
+    OffcanvasBox
+} from '../component';
+
 import { CellClock } from './Clock';
 import { Hello } from './Hello';
 import { HomePage } from './Home';
+
+import WebCell_0 from '../image/WebCell-0.png';
 
 const menu = [
     {
@@ -20,32 +30,39 @@ const menu = [
     }
 ];
 
-const { Route, Link } = createRouter({
+const { Route } = createRouter({
     startClass: 'start',
     endClass: 'end'
 });
 
 export const PageFrame = () => (
     <>
-        {/* <NavBar
-            narrow
-            expand="md"
-            theme="dark"
-            background="dark"
-            brand={
-                <img
-                    alt="WebCell scaffold"
-                    src={WebCell_0}
-                    style={{ width: '2rem' }}
+        <Navbar variant="dark" expand="md" sticky="top">
+            <Container fluid="lg">
+                <NavbarBrand>
+                    <img
+                        className="me-2"
+                        style={{ width: '2rem' }}
+                        alt="WebCell"
+                        src={WebCell_0}
+                    />
+                    WebCell scaffold
+                </NavbarBrand>
+                <NavbarToggle
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar"
+                    ariaLabel="Toggle navigation"
                 />
-            }
-        > */}
-        <nav>
-            {menu.map(({ title, href }) => (
-                <Link to={href}>{title}</Link>
-            ))}
-        </nav>
-        {/* </NavBar> */}
+                <OffcanvasBox closeButton title="WebCell scaffold">
+                    <ul className="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+                        {menu.map(({ title, href }) => (
+                            <NavLink href={`#${href}`}>{title}</NavLink>
+                        ))}
+                    </ul>
+                </OffcanvasBox>
+            </Container>
+        </Navbar>
 
         <main className="container router" style={{ minHeight: '60vh' }}>
             <Route
