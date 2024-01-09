@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  boot-cell:
+    specifier: ^2.0.0-beta.0
+    version: 2.0.0-beta.0(typescript@5.3.3)
   browser-unhandled-rejection:
     specifier: ^1.0.2
     version: 1.0.2
@@ -2969,6 +2972,32 @@ packages:
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
+
+  /boot-cell@2.0.0-beta.0(typescript@5.3.3):
+    resolution: {integrity: sha512-LEXrOD/QtAL6r9EdpssDePcgD2kEPSINOGsovR7Q8263aD5tPga6aXorhnuG1fwcK/hK+J+25ZXGXTq5M04eYw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-free': ^6
+      '@nuintun/qrcode': ^3
+      bootstrap: ^5
+      bootstrap-icons: ^1
+      dialog-polyfill: ^0.5
+      iterable-observer: ^1
+      share-api-polyfill: ^1
+    dependencies:
+      '@swc/helpers': 0.5.3
+      classnames: 2.5.1
+      dom-renderer: 2.0.4(typescript@5.3.3)
+      mobx: 6.12.0
+      regenerator-runtime: 0.14.1
+      web-cell: 3.0.0-rc.4(typescript@5.3.3)
+      web-utility: 4.1.3(typescript@5.3.3)
+    transitivePeerDependencies:
+      - '@webcomponents/webcomponentsjs'
+      - core-js
+      - element-internals-polyfill
+      - jsdom
+      - typescript
+    dev: false
 
   /boxen@4.2.0:
     resolution: {integrity: sha512-eB4uT9RGzg2odpER62bBwSLvUeGC+WbRjjyyFhGsKnc8wp/m0+hQsMUvUe3H2V0D5vw0nBdO1hCJoZo5mKeuIQ==}

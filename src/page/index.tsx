@@ -1,13 +1,5 @@
+import { NavLink, NavbarBrand, OffcanvasNavbar } from 'boot-cell';
 import { PageProps, createRouter } from 'cell-router';
-
-import {
-    Container,
-    NavLink,
-    Navbar,
-    NavbarBrand,
-    NavbarToggle,
-    OffcanvasBox
-} from '../component';
 
 import { CellClock } from './Clock';
 import { Hello } from './Hello';
@@ -37,8 +29,12 @@ const { Route } = createRouter({
 
 export const PageFrame = () => (
     <>
-        <Navbar variant="dark" expand="md" sticky="top">
-            <Container fluid="lg">
+        <OffcanvasNavbar
+            variant="dark"
+            expand="md"
+            sticky="top"
+            fluid="lg"
+            brand={
                 <NavbarBrand>
                     <img
                         className="me-2"
@@ -48,21 +44,14 @@ export const PageFrame = () => (
                     />
                     WebCell scaffold
                 </NavbarBrand>
-                <NavbarToggle
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar"
-                    aria-controls="offcanvasNavbar"
-                    ariaLabel="Toggle navigation"
-                />
-                <OffcanvasBox closeButton title="WebCell scaffold">
-                    <ul className="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
-                        {menu.map(({ title, href }) => (
-                            <NavLink href={`#${href}`}>{title}</NavLink>
-                        ))}
-                    </ul>
-                </OffcanvasBox>
-            </Container>
-        </Navbar>
+            }
+        >
+            <ul className="navbar-nav flex-row justify-content-end align-items-center flex-fill gap-3">
+                {menu.map(({ title, href }) => (
+                    <NavLink href={`#${href}`}>{title}</NavLink>
+                ))}
+            </ul>
+        </OffcanvasNavbar>
 
         <main className="container router" style={{ minHeight: '60vh' }}>
             <Route
