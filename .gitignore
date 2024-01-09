@@ -3,3 +3,4 @@ package-lock.json
 .parcel-cache/
 dist/
 .vscode/
+.vercel/

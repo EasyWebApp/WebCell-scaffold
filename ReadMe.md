@@ -2,34 +2,33 @@
 
 # WebCell scaffold
 
-App Project scaffold of **WebCell** v2
+App Project scaffold of **WebCell** v3
 
 https://web-cell.dev/scaffold/
 
-[![NPM Dependency](https://david-dm.org/EasyWebApp/scaffold.svg)][1]
 [![CI & CD](https://github.com/EasyWebApp/scaffold/actions/workflows/main.yml/badge.svg)][2]
 
 ## Technology stack
 
--   Language: [TypeScript v4][3]
--   Component engine: [WebCell v2][4]
+-   Language: [TypeScript v5][3]
+-   Component engine: [WebCell v3][4]
 -   Component suite: [BootCell v2][5]
--   PWA framework: [Workbox v6][6]
+-   PWA framework: [Workbox v7][6]
 -   Package bundler: [Parcel v2][7]
 -   CI / CD: GitHub [Actions][8] + [Pages][9]
 
 ## Development
 
 ```shell
-npm install
-
+npm i pnpm -g
+pnpm i
 npm start
 ```
 
 ## Deployment
 
 ```shell
-npm run build
+pnpm build
 ```
 
 [1]: https://david-dm.org/EasyWebApp/scaffold

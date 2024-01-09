@@ -2,7 +2,7 @@
   "name": "WebCell scaffold",
   "short_name": "WC Demo",
   "start_url": ".",
-  "description": "App Project scaffold of WebCell v2",
+  "description": "App Project scaffold of WebCell v3",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
