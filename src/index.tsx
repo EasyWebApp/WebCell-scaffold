@@ -3,7 +3,6 @@ import { DOMRenderer } from 'dom-renderer';
 import { configure } from 'mobx';
 import { documentReady, serviceWorkerUpdate } from 'web-utility';
 
-import './index.less';
 import { PageFrame } from './page';
 
 auto();
