@@ -1,7 +1,6 @@
-import { NavLink, NavbarBrand, OffcanvasNavbar } from 'boot-cell';
+import { Nav, NavLink, NavbarBrand, OffcanvasNavbar } from 'boot-cell';
 import { createRouter } from 'cell-router';
 
-import { Nav } from '../component/Nav';
 import { CellClock } from './Clock';
 import { Hello } from './Hello';
 import { HomePage } from './Home';
