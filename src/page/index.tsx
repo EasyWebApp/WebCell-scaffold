@@ -1,6 +1,7 @@
 import { NavLink, NavbarBrand, OffcanvasNavbar } from 'boot-cell';
-import { PageProps, createRouter } from 'cell-router';
+import { createRouter } from 'cell-router';
 
+import { Nav } from '../component/Nav';
 import { CellClock } from './Clock';
 import { Hello } from './Hello';
 import { HomePage } from './Home';
@@ -22,13 +23,10 @@ const menu = [
     }
 ];
 
-const { Route } = createRouter({
-    startClass: 'start',
-    endClass: 'end'
-});
+const { Route } = createRouter();
 
 export const PageFrame = () => (
-    <>
+    <div className="d-flex flex-column vh-100">
         <OffcanvasNavbar
             variant="dark"
             expand="md"
@@ -46,38 +44,17 @@ export const PageFrame = () => (
                 </NavbarBrand>
             }
         >
-            <ul className="navbar-nav flex-row justify-content-end align-items-center flex-fill gap-3">
+            <Nav className="justify-content-end flex-fill gap-3">
                 {menu.map(({ title, href }) => (
                     <NavLink href={`#${href}`}>{title}</NavLink>
                 ))}
-            </ul>
+            </Nav>
         </OffcanvasNavbar>
 
-        <main className="container router" style={{ minHeight: '60vh' }}>
-            <Route
-                path="/home"
-                component={({ className }: PageProps) => (
-                    <div className={`page ${className}`}>
-                        <HomePage />
-                    </div>
-                )}
-            />
-            <Route
-                path="/clock"
-                component={({ className }: PageProps) => (
-                    <div className={`page ${className}`}>
-                        <CellClock />
-                    </div>
-                )}
-            />
-            <Route
-                path="/hello"
-                component={({ className }: PageProps) => (
-                    <div className={`page ${className}`}>
-                        <Hello />
-                    </div>
-                )}
-            />
+        <main className="container flex-fill">
+            <Route path="" component={HomePage} />
+            <Route path="/clock" component={CellClock} />
+            <Route path="/hello" component={Hello} />
         </main>
 
         <footer className="text-center bg-light py-5">
@@ -100,5 +77,5 @@ export const PageFrame = () => (
                 BootCell v2
             </a>
         </footer>
-    </>
+    </div>
 );

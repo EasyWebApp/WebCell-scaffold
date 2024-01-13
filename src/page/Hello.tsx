@@ -1,3 +1,9 @@
-export function Hello({ name = 'World' }) {
-    return <h1>Hello, {name}!</h1>;
+import { FC, WebCellProps } from 'web-cell';
+
+export interface HelloProps extends WebCellProps {
+    name?: string;
 }
+
+export const Hello: FC<HelloProps> = ({ name = 'World', ...props }) => (
+    <h1 {...props}>Hello, {name}!</h1>
+);
