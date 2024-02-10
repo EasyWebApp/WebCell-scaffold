@@ -45,7 +45,9 @@ export const PageFrame = () => (
         >
             <Nav className="justify-content-end flex-fill gap-3">
                 {menu.map(({ title, href }) => (
-                    <NavLink href={`#${href}`}>{title}</NavLink>
+                    <NavLink href={href.startsWith('http') ? href : `#${href}`}>
+                        {title}
+                    </NavLink>
                 ))}
             </Nav>
         </OffcanvasNavbar>
