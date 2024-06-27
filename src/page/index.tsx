@@ -18,7 +18,7 @@ const menu = [
     },
     {
         title: 'GitHub source',
-        href: 'https://github.com/EasyWebApp/scaffold'
+        href: 'https://github.com/EasyWebApp/WebCell-scaffold'
     }
 ];
 
@@ -39,7 +39,7 @@ export const PageFrame = () => (
                         alt="WebCell"
                         src={WebCell_0}
                     />
-                    WebCell scaffold
+                    WebCell-scaffold
                 </NavbarBrand>
             }
         >
@@ -62,7 +62,7 @@ export const PageFrame = () => (
             <img
                 className="mx-1"
                 style={{ width: '1.5rem' }}
-                alt="WebCell scaffold"
+                alt="WebCell"
                 src={WebCell_0}
             />
             Proudly developed with
