@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import { WebCell, component, observer } from 'web-cell';
+import { component, observer, WebCell } from 'web-cell';
 
 export interface CellClock extends WebCell {}
 
