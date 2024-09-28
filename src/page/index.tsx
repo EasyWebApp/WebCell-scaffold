@@ -1,11 +1,10 @@
-import { Nav, NavLink, NavbarBrand, OffcanvasNavbar } from 'boot-cell';
+import { Nav, NavbarBrand, NavLink, OffcanvasNavbar } from 'boot-cell';
 import { createRouter } from 'cell-router';
 
+import WebCell_0 from '../image/WebCell-0.png';
 import { CellClock } from './Clock';
 import { Hello } from './Hello';
 import { HomePage } from './Home';
-
-import WebCell_0 from '../image/WebCell-0.png';
 
 const menu = [
     {
@@ -66,7 +65,12 @@ export const PageFrame = () => (
                 src={WebCell_0}
             />
             Proudly developed with
-            <a className="mx-1" target="_blank" href="https://web-cell.dev/">
+            <a
+                className="mx-1"
+                target="_blank"
+                href="https://web-cell.dev/"
+                rel="noreferrer"
+            >
                 WebCell v3
             </a>
             &amp;
@@ -74,6 +78,7 @@ export const PageFrame = () => (
                 className="mx-1"
                 target="_blank"
                 href="https://bootstrap.web-cell.dev/"
+                rel="noreferrer"
             >
                 BootCell v2
             </a>
