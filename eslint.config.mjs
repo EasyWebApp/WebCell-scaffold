@@ -14,15 +14,13 @@ export default tsEslint.config(
     {
         plugins: {
             '@typescript-eslint': tsEslint.plugin,
-            // https://github.com/jsx-eslint/eslint-plugin-react/issues/3699
+            // @ts-expect-error https://github.com/jsx-eslint/eslint-plugin-react/issues/3699
             react: fixupPluginRules(reactPlugin),
             'simple-import-sort': simpleImportSortPlugin
         }
     },
-    {
-        // config with just ignores is the replacement for `.eslintignore`
-        ignores: ['**/node_modules/**', '**/dist/**', '**/.parcel-cache/**']
-    },
+    // config with just ignores is the replacement for `.eslintignore`
+    { ignores: ['**/node_modules/**', '**/dist/**', '**/.parcel-cache/**'] },
 
     // extends ...
     eslint.configs.recommended,
@@ -31,11 +29,7 @@ export default tsEslint.config(
     // base config
     {
         languageOptions: {
-            globals: {
-                ...globals.es2020,
-                ...globals.browser,
-                ...globals.node
-            },
+            globals: { ...globals.es2022, ...globals.browser, ...globals.node },
             parserOptions: {
                 projectService: true,
                 tsconfigRootDir,
@@ -45,18 +39,19 @@ export default tsEslint.config(
         rules: {
             'simple-import-sort/exports': 'error',
             'simple-import-sort/imports': 'error',
+            '@typescript-eslint/no-unused-vars': 'warn',
+            '@typescript-eslint/no-explicit-any': 'warn',
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
             'react/jsx-no-target-blank': 'warn',
             'react/jsx-sort-props': [
                 'error',
                 {
                     reservedFirst: true,
-                    shorthandLast: true,
                     callbacksLast: true,
                     noSortAlphabetically: true
                 }
-            ],
-            '@typescript-eslint/no-empty-object-type': 'off',
-            '@typescript-eslint/no-unsafe-declaration-merging': 'warn'
+            ]
         }
     },
     {
