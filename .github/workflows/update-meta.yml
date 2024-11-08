@@ -1,0 +1,36 @@
+name: CI & CD
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - package.json
+jobs:
+    Update-Meta:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - name: Set NPM metadata
+              env:
+                  # "Administration" repository permissions (write),
+                  # https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#replace-all-repository-topics
+                  GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN || github.token }}
+                  REPOSITORY: ${{ github.repository }}
+              run: |
+                  DESCRIPTION=$(node -p "JSON.parse(require('fs').readFileSync('package.json')).description || ''")
+                  HOME_PAGE=$(node -p "JSON.parse(require('fs').readFileSync('package.json')).homepage || ''")
+                  TOPICS=$(node -p "JSON.parse(require('fs').readFileSync('package.json')).keywords?.join().toLowerCase() || ''")
+
+                  [[ "$DESCRIPTION" ]]  &&  gh repo edit "$REPOSITORY" --description "$DESCRIPTION"
+                  [[ "$HOME_PAGE" ]]  &&  gh repo edit "$REPOSITORY" --homepage "$HOME_PAGE"
+                  [[ "$TOPICS" ]]  &&  {
+                    gh api --method PUT "repos/$REPOSITORY/topics" -f "names[]"
+                    gh repo edit "$REPOSITORY" --add-topic "$TOPICS"
+                  } || true
