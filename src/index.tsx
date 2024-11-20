@@ -4,6 +4,7 @@ import { configure } from 'mobx';
 import { documentReady, serviceWorkerUpdate } from 'web-utility';
 
 import { PageFrame } from './page';
+import { renderMode } from './utility';
 
 auto();
 
@@ -34,4 +35,6 @@ serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
 );
 
-documentReady.then(() => new DOMRenderer().render(<PageFrame />));
+documentReady.then(() =>
+    new DOMRenderer().render(<PageFrame />, document.body, renderMode)
+);

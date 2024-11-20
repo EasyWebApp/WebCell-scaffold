@@ -1,9 +1,11 @@
 import { observable } from 'mobx';
 import { component, observer, WebCell } from 'web-cell';
 
+import { renderMode } from '../utility';
+
 export interface CellClock extends WebCell {}
 
-@component({ tagName: 'cell-clock' })
+@component({ tagName: 'cell-clock', renderMode })
 @observer
 export class CellClock extends HTMLElement implements WebCell {
     @observable

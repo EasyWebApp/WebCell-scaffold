@@ -1,4 +1,4 @@
-name: CI & CD
+name: Update Meta
 on:
     push:
         branches:
@@ -21,7 +21,7 @@ jobs:
               env:
                   # "Administration" repository permissions (write),
                   # https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#replace-all-repository-topics
-                  GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN || github.token }}
+                  GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
                   REPOSITORY: ${{ github.repository }}
               run: |
                   DESCRIPTION=$(node -p "JSON.parse(require('fs').readFileSync('package.json')).description || ''")
@@ -33,4 +33,4 @@ jobs:
                   [[ "$TOPICS" ]]  &&  {
                     gh api --method PUT "repos/$REPOSITORY/topics" -f "names[]"
                     gh repo edit "$REPOSITORY" --add-topic "$TOPICS"
-                  } || true
+                  }

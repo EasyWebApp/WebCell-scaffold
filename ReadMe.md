@@ -4,7 +4,7 @@
 
 App Project scaffold of [WebCell][1] v3
 
-https://web-cell-scaffold.vercel.app/
+https://web-cell.dev/WebCell-scaffold/
 
 [![CI & CD](https://github.com/EasyWebApp/WebCell-scaffold/actions/workflows/main.yml/badge.svg)][2]
 
